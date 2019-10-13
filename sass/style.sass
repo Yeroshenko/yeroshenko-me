@@ -1,0 +1,413 @@
+@import 'reset'
+@import 'icons'
+
+$main-color: #39b54a
+
+body
+  font-family: 'Montserrat', sans-serif
+  color: white
+  font-size: 14px
+  font-weight: 400
+  &::-webkit-scrollbar
+    width: 10px
+    background-color: black
+    &-track
+      background-color: black
+      border-radius: 10px
+    &-thumb
+      border-radius: 10px
+      background: $main-color
+    
+// PROGRESS BAR
+  
+.progress-bar
+  position: fixed
+  left: 0
+  top: 0
+  width: 0%
+  height: 4px
+  background-color: $main-color
+
+// /PROGRESS BAR
+
+// HEADER
+
+.header
+  height: 100vh
+  width: 100%
+  background: #000 url('../img/header-bg.jpg')
+  background-size: cover
+  background-repeat: no-repeat  
+  background-position: center
+  background-attachment: fixed 
+  position: relative
+  &-inner
+    height: 100%
+    display: flex
+    flex-direction: column
+  &-top
+    padding: 20px 40px 0 40px
+    display: flex
+    align-items: center
+    justify-content: space-between
+    &__logo
+      font-size: 30px
+      position: relative
+      &::after
+        content: ''
+        position: absolute
+        width: 5px
+        height: 5px
+        bottom: 7px
+        right: -6px
+        background-color: $main-color
+        border-radius: 50%
+    &__menu
+      color: $main-color
+      background-color: black
+      position: fixed
+      right: 40px
+      padding: 10px
+      display: flex
+      flex-direction: row
+      align-items: center
+      cursor: pointer
+      z-index: 3
+      &_text
+        text-transform: uppercase
+        font-size: 16px
+      &_icon
+        display: block
+        height: 25px
+        width: 40px
+        position: relative
+        margin-left: 10px
+        & span
+          position: absolute
+          top: 50%
+          transform: translateY(-50%)
+          width: 25px
+          height: 2px
+          background-color: white
+          border-radius: 1px
+          // transition: .3s all
+          &::before
+            position: absolute
+            content: ''
+            display: block
+            transition: .3s all
+            width: 25px
+            height: 2px
+            background-color: white
+            border-radius: 1px
+            transform: translateY(-6px)
+          &::after
+            position: absolute
+            content: ''
+            display: block
+            transition: .3s all
+            width: 25px
+            height: 2px
+            background-color: white
+            border-radius: 1px
+            transform: translateY(6px)
+
+  // <-- /header-top -->  
+    
+  // <-- header-bottom -->
+  &-bottom
+    height: 100%
+    &__inner  
+      height: 100%
+      display: flex
+      flex-direction: column
+      justify-content: center
+    &__title
+      font-size: 55px
+      line-height: 70px
+      font-weight: 600
+      max-width: 65%
+    &__subtitle
+      margin-bottom: 5px
+      font-size: 20px
+      text-transform: uppercase
+      opacity: 0.5
+    &__buttons
+      margin-top: 80px
+
+  &-scroll
+    display: flex
+    position: absolute
+    justify-content: flex-end
+    bottom: 0
+    width: 100%
+    &__text
+      text-transform: uppercase
+      font-weight: 700
+      letter-spacing: 1px
+      height: 14px
+      padding-left: 25px
+      margin-right: 10px
+      margin-top: -5px
+      position: relative
+      &::before
+        content: ''
+        position: absolute
+        height: 10px
+        width: 10px
+        left: 0
+        top: 0
+        border-bottom: 2px solid $main-color
+        border-right: 2px solid $main-color
+        transform: rotate(45deg)
+    &__line
+      margin-right: 5%
+      height: 100px
+      background-color: $main-color
+      width: 3px
+      border-radius: 1px
+
+
+   
+
+
+.button
+  background-color: transparent
+  border: 2px solid white
+  border-radius: 25px
+  color: #fff
+  width: 215px
+  height: 55px
+  font-weight: 500
+  font-size: 16px
+  letter-spacing: 2px
+  cursor: pointer
+  outline: none
+  transition: all .3s
+  &:first-child
+    margin-right: 20px
+  &:hover
+    background-color: white
+    color: black    
+  
+  // MENU
+  
+.menu
+  position: fixed
+  right: 0
+  top: 0
+  height: 100vh
+  background-color: black
+  width: 300px
+  font-size: 25px
+  padding: 26px 50px
+  display: flex
+  vertical-align: center
+  align-items: center
+  z-index: 3
+  transform: translateX(100%)
+  transition: .3s all
+
+  &-overlay
+    position: fixed
+    top: 0
+    left: 0
+    width: 100vw
+    height: 100vh
+    display: none
+    z-index: 2
+
+
+  &-navigation  
+    &__item
+      display: block
+      &:not(:last-child)
+        margin-bottom: 20px
+      &_link
+        cursor: pointer
+        // color: white
+        position: relative
+        &:after 
+          position: absolute
+          background-color: $main-color
+          display: block
+          content: ""
+          height: 2px
+          width: 0
+          bottom: 0
+          transition:  0.3s
+        &:hover
+          &:after
+            width: 100%
+
+
+.menu-active .header-top__menu
+  &_text
+    transition: .3s all
+    transform: translateX(-110px)
+  &_icon  span
+    height: 0
+    &::before
+      transform: rotate(45deg)
+    &::after
+      transform: rotate(-45deg)
+.active
+  transform: translateX(0)
+
+  // /MENU
+
+  // /HEADER
+
+.section-title
+  text-align: center
+  padding-top: 110px
+  margin-bottom: 132px
+  font-size: 40px
+  position: relative
+  line-height: 50px
+  &::after
+    content: ''
+    position: absolute
+    bottom: -20px
+    left: 50%
+    transform: translateX(-50%)
+    width: 120px
+    height: 2px
+    background-color: $main-color
+
+
+// About me
+
+.about  
+  background-color: $main-color
+  padding-bottom: 110px
+  position: relative
+  &-inner 
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+  & .section-title
+    margin-bottom: 102px
+    &::after
+      background-color: black
+  &-text
+    color: black
+    font-size: 25px
+    line-height: 35px
+    text-align: center
+    max-width: 990px
+    margin-bottom: 80px
+  &-btn
+    background-color: white
+    color: black
+    &:hover
+      box-shadow: 0 12px 43px 10px rgba(255, 255, 255, 0.31)
+  &-topline
+    position: absolute
+    top: 0
+    width: 100%
+    display: flex;
+    justify-content: flex-end;
+    span
+      margin-right: 5%
+      height: 100px
+      background-color: white
+      width: 3px
+      border-radius: 1px
+
+// Skills
+
+.skills
+  background-color: black
+  padding-bottom: 120px
+
+  &-slider
+    width: 100%
+    display: flex
+    flex-direction: row
+    justify-content: center
+    align-items: center
+    &__block
+      width: 25%
+      display: flex
+      flex-direction: column
+      justify-content: space-between
+      align-items: center
+      vertical-align: center
+      outline: none
+      &_icon
+        display: block
+        padding: 0
+        margin: 0
+        max-width: 100%
+        & img
+          max-height: 120px
+      &_text
+        text-align: center
+        margin-top: 20px
+        display: block
+        font-size: 20px
+        font-weight: 500
+        text-transform: uppercase
+
+.slick-initialized .slick-slide 
+    display: flex
+
+// /Skills
+
+// Contact
+
+.contact
+  width: 100%
+  height: 100vh
+  background-color: #000 
+  &-form
+    display: flex
+    flex-direction: row
+    &__left
+      display: flex
+      flex-direction: column
+      justify-content: flex-start
+      width: 50%
+      align-items: flex-end
+      padding-right: 50px
+      input
+        height: 55px
+        border: 2px solid white
+        background: transparent
+        border-radius: 10px
+        padding: 25px
+        outline: none
+        color: white
+        width: 400px  
+        font-size: 18px 
+        &:not(:last-child)
+          margin-bottom: 20px
+    &__right
+      display: flex 
+      flex-direction: column
+      justify-content: flex-start
+      width: 50%
+      align-items: flex-start
+      padding-left: 50px
+      textarea
+        border: 2px solid white
+        background: transparent
+        border-radius: 10px
+        padding: 25px
+        outline: none
+        color: white
+        width: 400px  
+        font-size: 18px 
+        height: 130px
+        margin-bottom: 20px
+// /Contact
+
+// classes
+
+.active
+  display: flex
+
+.show
+  display: block

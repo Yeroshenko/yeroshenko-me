@@ -13,7 +13,12 @@
 </head>
 <body>
 
+<!-- progress bar -->
 <div class="progress-bar"></div>
+
+<!-- scroll to top -->
+<div class="scroller"></div>
+
 
 <header class="header"id="home">
   <div class="header-inner">
@@ -27,7 +32,7 @@
           <li class="menu-navigation__item"><a href="#home" class="menu-navigation__item_link"> Главная</li></a>
           <li class="menu-navigation__item"><a href="#about" class="menu-navigation__item_link"> Обо мне</li></a>
           <li class="menu-navigation__item"><a href="#skills" class="menu-navigation__item_link"> Скилы</li></a>
-          <li class="menu-navigation__item"><a href="#" class="menu-navigation__item_link"> Мои роботы</li></a>
+          <li class="menu-navigation__item"><a href="#works" class="menu-navigation__item_link"> Мои роботы</li></a>
           <li class="menu-navigation__item"><a href="#contact" class="menu-navigation__item_link"> Контакты</li></a>
         </ul>
       </nav>
@@ -56,12 +61,12 @@
             Это мой сайт портфолио.
           </h1>
           <div class="header-bottom__buttons">
-            <button class="header-bottom__buttons_btn button">
+            <a href="#about" class="header-bottom__buttons_btn button">
               обо мне
-            </button>
-            <button class="header-bottom__buttons_btn button">
+            </a>
+            <a href="#contact" class="header-bottom__buttons_btn button">
               мои контакты
-            </button>
+            </a>
           </div> 
         </div>
       </div>
@@ -74,141 +79,220 @@
     </div>
   </div>
 </header>
-<main>
-  <section class="about" id="about">
+
+<section class="about" id="about">
+  <div class="container">
+    <div class="about-inner">
+      <h2 class="about-title section-title">
+        Обо мне
+      </h2>
+      <p class="about-text">
+          Всем привет! Меня зовут Валерий. Мне 18 лет.
+          С декабря 2018 года начал изучать самостоятельно веб разработку 
+          по книгам, статьям и видеокурсам. На данный момент я начинающий Front-end developer. 
+          Планирую в дальнейшем развиваться в данный сфере и повышать свой скилл.
+      </p>
+      <a href="#works" class="about-btn button"> 
+        мои роботы
+      </a>
+    </div>
+  </div>
+  <div class="about-topline">
+    <span></span>
+  </div>
+</section>
+
+
+<section class="skills" id="skills">
+  <div class="container">
+    <h2 class="skills-title section-title">
+      Cтек изученных технологий
+    </h2>
+    <div class="skills-slider">
+      <div class="skills-slider__block">
+        <div class="skills-slider__block_icon">
+          <img src="/img/skills/html.svg" >
+        </div>
+        <h3 class="skills-slider__block_text">
+          html
+        </h3>
+      </div>
+
+      <div class="skills-slider__block">
+        <div class="skills-slider__block_icon">
+          <img src="/img/skills/css.svg" >
+        </div>
+        <h3 class="skills-slider__block_text">
+          css
+        </h3>
+      </div>
+
+      <div class="skills-slider__block">
+        <div class="skills-slider__block_icon">
+          <img src="/img/skills/javascript.svg" >
+        </div>
+        <h3 class="skills-slider__block_text">
+          javascript
+        </h3>
+      </div>
+      
+      <div class="skills-slider__block">
+        <div class="skills-slider__block_icon">
+          <img src="/img/skills/jquery.svg" >
+        </div>
+        <h3 class="skills-slider__block_text">
+          jquery
+        </h3>
+      </div>
+
+    
+      <div class="skills-slider__block">
+        <div class="skills-slider__block_icon">
+          <img src="/img/skills/bootstrap.svg" >
+        </div>
+        <h3 class="skills-slider__block_text">
+          bootstrap
+        </h3>
+      </div>
+  
+      <div class="skills-slider__block">
+        <div class="skills-slider__block_icon">
+          <img src="/img/skills/sass.svg" >
+        </div>
+        <h3 class="skills-slider__block_text">
+          sass
+        </h3>
+      </div>
+
+      <div class="skills-slider__block">
+        <div class="skills-slider__block_icon">
+          <img src="/img/skills/photoshop.svg" >
+        </div>
+        <h3 class="skills-slider__block_text">
+          photoshop
+        </h3>
+      </div>
+
+      <div class="skills-slider__block">
+        <div class="skills-slider__block_icon">
+          <img src="/img/skills/github.svg" >
+        </div>
+        <h3 class="skills-slider__block_text">
+          github
+        </h3>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="works" id="works">
+  <div class="works-top">
+    <h2 class="works-title section-title">
+      Мои работы
+    </h2>
+  </div>
+  <div class="works-content">
     <div class="container">
-      <div class="about-inner">
-        <h2 class="about-title section-title">
-          Обо мне
-        </h2>
-        <p class="about-text">
-            Всем привет! Меня зовут Валерий. Мне 18 лет.
-            С декабря 2018 года начал изучать самостоятельно веб разработку 
-            по книгам, статьям и видеокурсам. На данный момент я начинающий Front-end developer. 
-            Планирую в дальнейшем развиваться в данный сфере и повышать свой скилл.
-        </p>
-        <button class="about-btn button"> мои роботы</button>
+      <div class="works-content__inner">
+
+        <figure class="works-content__item">
+          <a href="#" target="_blank" class="works-content__item_link">
+            <img src="img/works/Illina.jpg" alt="">
+          
+            <figcaption class="works-content__item_text">
+              <span>Сайт-визитка для фитнес тренера</span>  
+              HTML + CSS + JS (JQUERY) + PHP mailer
+            </figcaption>
+          </a>
+        </figure>
+
+        <figure class="works-content__item">
+          <a href="#" class="works-content__item_link">
+            <img src="img/works/GoSurf.jpg" alt="">
+          </a>
+          <figcaption class="works-content__item_text">
+              <span>Сайт-визитка для фитнес тренера</span>  
+              HTML + CSS + JS (JQUERY)
+            </figcaption>
+        </figure>
+        
       </div>
     </div>
-    <div class="about-topline">
-      <span></span>
-    </div>
-  </section>
+  </div>
+</section>
 
+<section class="contact" id="contact">
+  <div class="container">
+    <h2 class="contact-title section-title">
+      Контакты
+    </h2>
 
-  <section class="skills" id="skills">
-    <div class="container">
-      <h2 class="skills-title section-title">
-        Cтек изученных технологий
-      </h2>
-      <div class="skills-slider">
-        <div class="skills-slider__block">
-          <div class="skills-slider__block_icon">
-            <img src="/img/skills/html.svg" >
+    <div class="contact-inner">
+      <div class="contact-feedback">
+
+        <form action="#" class="contact-feedback__form">
+            <input type="text" name="Name" placeholder="Ваше имя"  required>
+            <input type="email" name="" id="E-mail" placeholder="Ваш email"  required>
+            <textarea name="Message" placeholder="Ваше сообщение" required></textarea>
+            <button type="submit" class="button" >Отправить</button>
+        </form>
+
+      </div>
+      <div class="contact-info">
+        
+        <div class="contact-info-block">
+          <div class="contact-info-block__icon">
+            <img src="/img/contacts/github-logo.svg" alt="">
           </div>
-          <h3 class="skills-slider__block_text">
-            html
-          </h3>
+          <a class="contact-info-block__link" href="https://github.com/Yeroshenko" target="_blank">Github</a>
         </div>
 
-        <div class="skills-slider__block">
-          <div class="skills-slider__block_icon">
-            <img src="/img/skills/css.svg" >
+        <div class="contact-info-block">
+          <div class="contact-info-block__icon">
+            <img src="/img/contacts/telegram.svg" alt="">
           </div>
-          <h3 class="skills-slider__block_text">
-            css
-          </h3>
+          <a class="contact-info-block__link" href="https://t.me/young_esthate" target="_blank">Telegram</a>
         </div>
 
-        <div class="skills-slider__block">
-          <div class="skills-slider__block_icon">
-            <img src="/img/skills/javascript.svg" >
+        <div class="contact-info-block">
+          <div class="contact-info-block__icon">
+            <img src="/img/contacts/instagram.svg" alt="">
           </div>
-          <h3 class="skills-slider__block_text">
-            javascript
-          </h3>
+          <a class="contact-info-block__link" href="https://www.instagram.com/yeroshenko_" target="_blank">Instagram</a>
+        </div>
+
+        <div class="contact-info-block">
+          <div class="contact-info-block__icon">
+            <img src="/img/contacts/facebook.svg" alt="">
+          </div>
+          <a class="contact-info-block__link" href="https://www.facebook.com/valeriy.yeroshenko" target="_blank">Facebook</a>
+        </div>
+
+        <div class="contact-info-block">
+          <div class="contact-info-block__icon">
+            <img src="/img/contacts/twitter.svg" alt="">
+          </div>
+          <a class="contact-info-block__link" href="https://twitter.com/MrYeroshenko" target="_blank">Twitter</a>
         </div>
         
-        <div class="skills-slider__block">
-          <div class="skills-slider__block_icon">
-            <img src="/img/skills/jquery.svg" >
+        <div class="contact-info-block">
+          <div class="contact-info-block__icon">
+            <img src="/img/contacts/call.svg" alt="">
           </div>
-          <h3 class="skills-slider__block_text">
-            jquery
-          </h3>
-        </div>
-
-      
-        <div class="skills-slider__block">
-          <div class="skills-slider__block_icon">
-            <img src="/img/skills/bootstrap.svg" >
-          </div>
-          <h3 class="skills-slider__block_text">
-            bootstrap
-          </h3>
-        </div>
-    
-        <div class="skills-slider__block">
-          <div class="skills-slider__block_icon">
-            <img src="/img/skills/sass.svg" >
-          </div>
-          <h3 class="skills-slider__block_text">
-            sass
-          </h3>
-        </div>
-
-        <div class="skills-slider__block">
-          <div class="skills-slider__block_icon">
-            <img src="/img/skills/photoshop.svg" >
-          </div>
-          <h3 class="skills-slider__block_text">
-            photoshop
-          </h3>
-        </div>
-
-        <div class="skills-slider__block">
-          <div class="skills-slider__block_icon">
-            <img src="/img/skills/github.svg" >
-          </div>
-          <h3 class="skills-slider__block_text">
-            github
-          </h3>
+          <a class="contact-info-block__link" href="tel:+380936490370" target="_blank">+380936490370</a>
         </div>
 
       </div>
+
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="works">
-    <div class="works-top">
-      <h2 class="works-title section-title">
-        Мои работы
-      </h2>
-    </div>
-    <div class="works-content">
-      <div class="container">
-        <div class="works-content__inner">
 
-          <div class="works-content__item">
-            <img src="img/works/Illina.jpg" alt="">
-          </div>
 
-          <div class="works-content__item">
-            <img src="img/works/GoSurf.jpg" alt="">
-          </div>
-          
-        </div>
-      </div>
-    </div>
-  </section>
-  
-
-</main>
-<footer>
-
-</footer>
 <script src="/js/jquery-3.4.1.min.js"></script>
 <script src="/js/slick.min.js"></script>
 <script src="/js/script.js"></script>
 </body>
-</html>
+</html

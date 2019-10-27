@@ -81,7 +81,7 @@ body
       &_icon
         display: block
         height: 25px
-        width: 40px
+        width: 25px
         position: relative
         margin-left: 10px
         & span
@@ -121,14 +121,15 @@ body
     height: 100%
     &__inner  
       height: 100%
+      padding: 0px 40px
       display: flex
       flex-direction: column
       justify-content: center
     &__title
-      font-size: 55px
+      font-size: 54px
       line-height: 70px
       font-weight: 600
-      max-width: 65%
+      max-width: 710px
     &__subtitle
       margin-bottom: 5px
       font-size: 20px
@@ -136,7 +137,10 @@ body
       opacity: 0.5
     &__buttons
       margin-top: 80px
+      display: flex
       &_btn
+        &:first-child
+          margin-right: 20px
         &:hover
           background-color: white
           color: black    
@@ -150,6 +154,7 @@ body
     &__text
       text-transform: uppercase
       font-weight: 700
+      font-size: 12px
       letter-spacing: 1px
       height: 14px
       padding-left: 25px
@@ -221,7 +226,7 @@ body
   border-radius: 25px
   color: #fff
   width: 215px
-  font-weight: 500
+  font-weight: 600
   font-size: 16px
   letter-spacing: 2px
   cursor: pointer
@@ -229,8 +234,6 @@ body
   transition: all .3s
   text-align: center
   line-height: 55px
-  &:first-child
-    margin-right: 20px
   
   // MENU
   
@@ -569,5 +572,4 @@ body
 .show
   display: block
 
-.fixed
-  display: fixed
+@import 'media'

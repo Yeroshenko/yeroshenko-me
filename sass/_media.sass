@@ -1,0 +1,114 @@
+// 1200px
+
+// 992px
+
+// 768px
+
+// 576px
+
+@media screen and ( max-width: 800px )
+  .header
+    &-bottom
+      &__title
+        font-size: 50px
+        line-height: 65px
+
+@media screen and ( max-width: 750px )
+  .header
+    &-bottom
+      &__title
+        font-size: 45px
+        line-height: 60px
+      &__buttons
+        margin-top: 70px
+
+@media screen and ( max-width: 650px )
+  .header
+    &-bottom
+      &__subtitle
+        font-size: 18px
+        margin-bottom: 0
+      &__title
+        font-size: 40px
+        line-height: 55px
+      &__buttons
+        margin-top: 60px
+
+@media screen and ( max-width: 600px )
+  .header
+    &-top
+      padding: 20px 20px 0px 20px
+      &__menu
+        right: 20px
+    &-bottom
+      &__inner  
+        padding: 0px 20px
+      &__title
+        font-size: 35px
+        line-height: 50px
+      &__subtitle
+        font-size: 16px
+      &__buttons
+        &_btn
+          font-size: 14px
+          line-height: 50px
+          width: 200px
+
+@media screen and ( max-width: 500px )
+  .header
+    &-bottom
+      &__title
+        font-size: 30px
+        line-height: 45px
+      &__subtitle
+        font-size: 14px
+      &__buttons
+        flex-direction: column
+        &_btn
+          width: 100%
+          &:first-child
+            margin-right: 0px
+            margin-bottom: 20px
+    &-scroll
+      &__text
+        display: none
+
+@media screen and ( max-width: 450px )
+  .header
+    &-top
+      &__logo
+        font-size: 25px
+      &__menu
+        &_text
+          font-size: 14px
+    &-bottom
+      &__title
+        font-size: 25px
+        line-height: 40px
+
+@media screen and ( max-width: 390px )
+  .header
+    &-top
+      &__logo
+        font-size: 20px
+      &__menu
+        &_text
+          font-size: 12px
+    &-bottom
+      &__inner
+        padding: 10px
+      &__subtitle
+        font-size: 12px
+      &__buttons
+        &_btn
+          font-size: 12px
+          line-height: 46px
+    &-scroll
+      display: none
+
+@media screen and ( max-width: 370px )
+  .header
+    &-bottom
+      &__title
+        font-size: 22px
+        line-height: 35px

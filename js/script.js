@@ -51,6 +51,8 @@ $(function() {
     }, 800);
   });
 
+  scrollTop();
+
   function scrollTop() {
     let scroller = $('.scroller');
 
@@ -69,7 +71,38 @@ $(function() {
     });
   }
 
-  scrollTop();
+  $('#submit').on('click', function() {
+    let email = $('#email').val().trim(),
+        name = $('#name').val().trim(),
+        message = $('#message').val().trim();
+
+    $.ajax({
+      type: 'POST',
+      url: '../ajax/mail.php',
+      cache: false,
+      data: { 
+        'name': name, 
+        'email': email,
+        'message': message
+      },
+      dataType: 'html',
+      beforeSend: function() {
+        $('#submit').prop('disabled', true);
+      },
+      success: function (data) {
+        if(!data){
+          alert('Error');
+        } else {
+          alert('sps za message');
+          $('.contact-feedback__form').trigger('reset');
+        }
+        $('#submit').prop('disabled', false );
+      }
+    });
+        
+  });
+
+
 });
 
 

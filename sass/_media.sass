@@ -12,7 +12,12 @@
       &__title
         font-size: 50px
         line-height: 65px
-
+  
+  .contact
+    &-feedback
+      padding: 0 25px
+    &-info
+      padding: 0 25px
 @media screen and ( max-width: 750px )
   .header
     &-bottom
@@ -21,6 +26,21 @@
         line-height: 60px
       &__buttons
         margin-top: 70px
+  
+  .section
+    padding-bottom: 100px
+    &-title
+      font-size: 35px
+      line-height: 50px
+      padding-top: 100px
+      margin-bottom: 90px
+      &::after
+        bottom: -15px
+
+  .about
+    &-text
+      font-size: 23px
+      margin-bottom: 60px
 
 @media screen and ( max-width: 650px )
   .header
@@ -33,6 +53,48 @@
         line-height: 55px
       &__buttons
         margin-top: 60px
+
+  .section
+    padding-bottom: 90px
+    &-title
+      font-size: 30px
+      padding-top: 90px
+      margin-bottom: 80px
+      &::after
+        bottom: -5px
+        width: 100px
+
+  .about
+    &-text
+      font-size: 20px
+      line-height: 30px
+      margin-bottom: 40px
+
+  .works
+    &-content
+      &__inner
+        flex-direction: column
+        padding: 0
+      &__item
+        max-width: 80% 
+
+  
+  .contact
+    &-inner
+      flex-direction: column
+    &-feedback
+      width: 100%
+    &-info
+      width: 100%
+      margin-top: 30px
+      flex-direction: row
+      &-block
+        justify-content: center
+        &__icon
+          img
+            // width: 25px 
+        &__text
+          display: none
 
 @media screen and ( max-width: 600px )
   .header
@@ -53,6 +115,14 @@
           font-size: 14px
           line-height: 50px
           width: 200px
+    &-scroll
+      &__text
+        display: none
+  .scroller
+    height: 50px
+    width: 50px
+    right: 20px
+
 
 @media screen and ( max-width: 500px )
   .header
@@ -62,16 +132,28 @@
         line-height: 45px
       &__subtitle
         font-size: 14px
-      &__buttons
-        flex-direction: column
-        &_btn
-          width: 100%
-          &:first-child
-            margin-right: 0px
-            margin-bottom: 20px
-    &-scroll
-      &__text
-        display: none
+    
+  .works
+    &-content
+      &__item
+        &_text
+          font-size: 16px
+    
+  .section
+    padding-bottom: 80px
+    &-title
+      font-size: 25px
+      line-height: 50px
+      padding-top: 80px
+      margin-bottom: 70px
+      &::after
+        bottom: 0px
+        width: 90px
+
+  .about
+    &-text
+      font-size: 18px
+      
 
 @media screen and ( max-width: 450px )
   .header
@@ -79,12 +161,33 @@
       &__logo
         font-size: 25px
       &__menu
+        right: 10px
         &_text
           font-size: 14px
     &-bottom
       &__title
         font-size: 25px
         line-height: 40px
+      &__buttons
+        flex-direction: column
+        &_btn
+          width: 100%
+          line-height: 45px
+          &:first-child
+            margin-right: 0px
+            margin-bottom: 20px
+  
+  .scroller 
+    right: 10px
+    bottom: 10px
+
+  
+  .contact
+    &-info
+      &-block
+        &__icon
+          img
+            width: 25px 
 
 @media screen and ( max-width: 390px )
   .header
@@ -105,6 +208,26 @@
           line-height: 46px
     &-scroll
       display: none
+
+  .section
+    padding-bottom: 70px
+    &-title
+      padding-top: 70px
+      margin-bottom: 60px
+      font-size: 20px
+      &::after
+        width: 70px
+
+  .about
+    &-topline
+      display: none
+    &-text
+      font-size: 18px
+      line-height: 25px
+
+  .contact
+    &-feedback
+      padding: 0px
 
 @media screen and ( max-width: 370px )
   .header

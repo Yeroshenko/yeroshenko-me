@@ -1,16 +1,34 @@
 $(function() {
 
+  // Preloader
+
+  loader();
+
+  function loader(){
+
+    setInterval(() => {
+      let preloader = $('.preloader');
+
+      preloader.css('opacity', '0');
+      $('body').css('overflow', 'inherit');
+      setInterval(() => preloader.remove(), 1000);
+    }, 1000);
+
+    
+  }
+
+
   // ProgressBar
 
-  $(window).on('scroll', () => {
-    
+  $(window).on('scroll', () => progress() ); 
+
+  function progress(){
     let windowScroll = $(document).scrollTop(),
         windowHeight = ($(document).height() - $(window).height()) / 100,
         per          = windowScroll / windowHeight;
 
     $('.progress-bar').width(per + '%');
-
-  });
+  }
 
   // Menu
 
@@ -23,6 +41,7 @@ $(function() {
     menu.toggleClass('active');
     menuTriger.toggleClass('menu-active');
     menuOverlay.toggleClass('show');
+    
   }
 
   menuTriger.on('click', () => toggleMenu() );
@@ -39,6 +58,26 @@ $(function() {
     autoplay: true,
     arrows: false,
     autoplaySpeed: 1000,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3
+        }
+      },
+      {
+        breakpoint: 650,
+        settings: {
+          slidesToShow: 2
+        }
+      },
+      {
+        breakpoint: 450,
+        settings: {
+          slidesToShow: 1
+        }
+      }
+    ]
   });
 
   // Anchor 

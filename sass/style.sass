@@ -9,6 +9,7 @@ body
   color: white
   font-size: 14px
   font-weight: 400
+  overflow: hidden
   &::-webkit-scrollbar
     width: 10px
     background-color: $dark-color
@@ -19,6 +20,59 @@ body
       border-radius: 10px
       background: $main-color
     
+// PRELOADER
+
+.preloader
+  position: fixed
+  width: 100%
+  height: 100%
+  background-color: $dark-color
+  z-index: 10
+  display: flex
+  justify-content: center
+  align-items: center
+  transition: 1s all
+  &-content
+    position: relative
+    width: 200px
+    height: 200px
+    &__block
+      position: absolute
+      width: 100%
+      height: 100%
+      border-radius: 50%  
+      animation: 1s linear infinite
+      &:nth-child(1)
+        border-bottom: 3px solid $main-color
+        animation-name: first
+      &:nth-child(2)
+        border-right: 3px solid $main-color
+        animation-name: second
+      &:nth-child(3) 
+        border-top: 3px solid $main-color
+        animation-name: second
+
+@keyframes first
+  0%
+    transform: rotateX(35deg) rotateY(-45deg) rotateZ(0deg)
+  100%
+    transform: rotateX(35deg) rotateY(-45deg) rotateZ(360deg)
+
+@keyframes second
+  0%
+    transform: rotateX(50deg) rotateY(10deg) rotateZ(0deg)
+  100%
+    transform: rotateX(50deg) rotateY(10deg) rotateZ(360deg)
+
+
+@keyframes third
+  0%
+    transform: rotateX(35deg) rotateY(55deg) rotateZ(0deg)
+  100%
+    transform: rotateX(35deg) rotateY(55deg) rotateZ(360deg)
+
+
+
 // PROGRESS BAR
   
 .progress-bar
@@ -36,8 +90,9 @@ body
 
 .header
   height: 100vh
+  min-height: 600px
   width: 100%
-  background: $dark-color url('../img/header-bg.jpg')
+  background: $dark-color url('../img/header-bg.webp')
   background-size: cover
   background-repeat: no-repeat  
   background-position: center
@@ -74,7 +129,8 @@ body
       flex-direction: row
       align-items: center
       cursor: pointer
-      z-index: 3
+      z-index: 9
+      border-radius: 7px
       &_text
         text-transform: uppercase
         font-size: 16px
@@ -92,7 +148,6 @@ body
           height: 2px
           background-color: white
           border-radius: 1px
-          // transition: .3s all
           &::before
             position: absolute
             content: ''
@@ -144,7 +199,6 @@ body
         &:hover
           background-color: white
           color: black    
-
   &-scroll
     display: flex
     position: absolute
@@ -178,25 +232,31 @@ body
       width: 3px
       border-radius: 1px
 
+  // <-- /header-bottom -->
+
+// /HEADER
+
+// SCROLLER
+
 .scroller
   position: fixed
   width: 60px
   height: 60px
   bottom: 20px
   right: 40px
+  border-radius: 10px
   background-color: black
   z-index: 3
   cursor: pointer
   transition: .7s all
   display: none
-
   &::before
     content: ''
     position: absolute
     top: 50%
     left: 50%
     transform: translate(-50%, -50%)
-    width: 4px
+    width: 3px
     height: 25px
     background-color: #777
     border-radius: 4px
@@ -210,16 +270,19 @@ body
     transform: translate(-50%, -50%) rotate(45deg)
     width: 13px
     height: 13px
-    border-top: 4px solid #777
-    border-left: 4px solid #777
-    // border-radius: 4px
+    border-top: 3px solid #777
+    border-left: 3px solid #777
     transition: .7s all
   &:hover
     &::before
       background-color: white
     &::after 
       border-color: white
-      
+
+// /SCROLLER      
+
+// BUTTON
+
 .button
   background-color: transparent
   border: 2px solid white
@@ -235,7 +298,9 @@ body
   text-align: center
   line-height: 55px
   
-  // MENU
+// /BUTTON
+
+// MENU
   
 .menu
   position: fixed
@@ -254,7 +319,6 @@ body
   z-index: 3
   transform: translateX(100%)
   transition: .3s all
-
   &-overlay
     position: fixed
     top: 0
@@ -264,7 +328,6 @@ body
     display: none
     background: rgba(black, 0.4)
     z-index: 2
-
   &-navigation  
     width: 100%
     &__item
@@ -287,32 +350,32 @@ body
           &:after
             width: 100%
 
-
-.menu-active .header-top__menu
-  &_text
-    transition: .3s all
-    transform: translateX(-110px)
-  &_icon  span
-    height: 0
-    &::before
-      transform: rotate(45deg)
-    &::after
-      transform: rotate(-45deg)
+.menu-active 
+  .header-top__menu
+    &_text
+      transition: .3s all
+      transform: translateX(-110px)
+      font-size: 16px
+    &_icon  span
+      height: 0
+      &::before
+        transform: rotate(45deg)
+      &::after
+        transform: rotate(-45deg)
       
 .active
   transform: translateX(0)
 
-  // /MENU
+// /MENU
 
-  // /HEADER
+// SECTION TITLE
 
 .section-title
   text-align: center
   padding-top: 110px
-  margin-bottom: 132px
+  margin-bottom: 102px
   font-size: 40px
   position: relative
-  line-height: 50px
   &::after
     content: ''
     position: absolute
@@ -323,20 +386,20 @@ body
     height: 2px
     background-color: $main-color
 
+// /SECTION TITLE
 
-// About me
+// ABOUT
 
 .about  
   background-color: $main-color
-  padding-bottom: 110px
   position: relative
+  padding-bottom: 110px
   &-inner 
     display: flex
     flex-direction: column
     justify-content: center
     align-items: center
   & .section-title
-    margin-bottom: 102px
     &::after
       background-color: black
   &-text
@@ -364,12 +427,13 @@ body
       width: 3px
       border-radius: 1px
 
-// Skills
+// /ABOUT
+
+// SKILLS
 
 .skills
   background-color: $dark-color
   padding-bottom: 110px
-
   &-slider
     width: 100%
     display: flex
@@ -402,9 +466,10 @@ body
 .slick-initialized .slick-slide 
     display: flex
 
-// /Skills
+  
+// /SKILLS
 
-// Works
+// WORKS
 
 .works
   padding-bottom: 110px
@@ -416,6 +481,7 @@ body
     &__inner
       padding: 0px 10px
       display: flex
+      align-items: center
       flex-direction: row
       flex-wrap: wrap
     &__item
@@ -473,13 +539,14 @@ body
           transition: 1s all
           transform: scale(1.05)
           z-index: 1
-// /Works
 
-// Contact
+// /WORKS
+
+// CONTACT
 
 .contact  
   background-color: $dark-color
-  padding-bottom: 110px
+  padding-bottom: 40px
   &-inner
     display: flex
     flex-direction: row
@@ -487,7 +554,6 @@ body
     width: 60%
     padding: 0px 50px
     &__form
-
       input
         display: block
         outline: none
@@ -503,7 +569,6 @@ body
         margin-bottom: 30px
         &:focus
           border: 2px solid $main-color
-
       textarea
         resize: none
         display: block
@@ -521,7 +586,6 @@ body
         margin-bottom: 30px
         &:focus
           border: 2px solid $main-color
-
       button
         display: block
         width: 100%
@@ -529,10 +593,14 @@ body
         border: none
         &:hover
           box-shadow: 0 2px 43px 8px rgba($main-color, 0.31)
-    
+
+  // <!-- contact-info -->
+
   &-info
     width: 40%
     padding: 0 50px
+    display: flex
+    flex-direction: column
     &-block
       width: 100%
       display: flex
@@ -541,8 +609,7 @@ body
       margin-bottom: 20px
       &__icon
         max-width: 30px
-          
-      &__link
+      &__text
         font-size: 18px
         color: $main-color
         margin-left: 30px 

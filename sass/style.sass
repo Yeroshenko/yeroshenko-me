@@ -1,55 +1,49 @@
 @import 'reset'
-@import 'icons'
+@import 'variables'
+@import 'interface'
 
-$main-color: #39b54a
-$dark-color: #090909
-
-body
-  font-family: 'Montserrat', sans-serif
-  color: white
-  font-size: 14px
-  font-weight: 400
-  overflow: hidden
-  &::-webkit-scrollbar
-    width: 10px
-    background-color: $dark-color
-    &-track
-      background-color: black
-      border-radius: 10px
-    &-thumb
-      border-radius: 10px
-      background: $main-color
     
-// PRELOADER
+/* Preloader */
 
 .preloader
   position: fixed
-  width: 100%
-  height: 100%
-  background-color: $dark-color
-  z-index: 10
   display: flex
   justify-content: center
   align-items: center
+
+  width: 100%
+  height: 100%
+
+  background-color: $dark-color
+
   transition: 1s all
+
+  z-index: 10
   &-content
     position: relative
+
     width: 200px
     height: 200px
     &__block
       position: absolute
+
       width: 100%
       height: 100%
+
       border-radius: 50%  
+
       animation: 1s linear infinite
       &:nth-child(1)
         border-bottom: 3px solid $main-color
+
         animation-name: first
       &:nth-child(2)
         border-right: 3px solid $main-color
+
         animation-name: second
       &:nth-child(3) 
         border-top: 3px solid $main-color
+
         animation-name: second
 
 @keyframes first
@@ -73,35 +67,50 @@ body
 
 
 
-// PROGRESS BAR
+/* Progress bar */
   
 .progress-bar
   position: fixed
   left: 0
   top: 0
+
   width: 0%
   height: 4px
+
   background-color: $main-color
+
   z-index: 99
 
-// /PROGRESS BAR
 
-// HEADER
+/* Header */
 
 .header
+  position: relative
+
   height: 100vh
   min-height: 600px
   width: 100%
-  background: $dark-color url('../img/header-bg.webp')
-  background-size: cover
-  background-repeat: no-repeat  
-  background-position: center
-  background-attachment: fixed 
-  position: relative
-  &-inner
+  background-color: #000
+  &-background
+    // position: absolute
+    top: 0
+    left: 0
+    width: 100%
     height: 100%
+  &-inner
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+
     display: flex
     flex-direction: column
+
+
+/* Header top */
+
+.header
   &-top
     padding: 20px 40px 0 40px
     display: flex
@@ -169,9 +178,10 @@ body
             border-radius: 1px
             transform: translateY(6px)
 
-  // <-- /header-top -->  
-    
-  // <-- header-bottom -->
+  /* Header bottom */
+
+.header
+  overflow: hidden
   &-bottom
     height: 100%
     &__inner  
@@ -199,6 +209,10 @@ body
         &:hover
           background-color: white
           color: black    
+
+/* Header scroll */
+
+.header
   &-scroll
     display: flex
     position: absolute
@@ -234,9 +248,8 @@ body
 
   // <-- /header-bottom -->
 
-// /HEADER
 
-// SCROLLER
+/* Scroller */ 
 
 .scroller
   position: fixed
@@ -279,114 +292,6 @@ body
     &::after 
       border-color: white
 
-// /SCROLLER      
-
-// BUTTON
-
-.button
-  background-color: transparent
-  border: 2px solid white
-  border-radius: 25px
-  color: #fff
-  width: 215px
-  font-weight: 600
-  font-size: 16px
-  letter-spacing: 2px
-  cursor: pointer
-  outline: none
-  transition: all .3s
-  text-align: center
-  line-height: 55px
-  
-// /BUTTON
-
-// MENU
-  
-.menu
-  position: fixed
-  right: 0
-  top: 0
-  height: 100vh
-  background-color: black
-  width: 300px
-  font-size: 25px
-  padding: 26px 60px
-  display: flex
-  flex-direction: column
-  justify-content: center
-  vertical-align: center
-  align-items: center
-  z-index: 3
-  transform: translateX(100%)
-  transition: .3s all
-  &-overlay
-    position: fixed
-    top: 0
-    left: 0
-    width: 100vw
-    height: 100vh
-    display: none
-    background: rgba(black, 0.4)
-    z-index: 2
-  &-navigation  
-    width: 100%
-    &__item
-      display: block
-      &:not(:last-child)
-        margin-bottom: 20px
-      &_link
-        cursor: pointer
-        position: relative
-        &:after 
-          position: absolute
-          background-color: $main-color
-          display: block
-          content: ""
-          height: 2px
-          width: 0
-          bottom: 0
-          transition:  0.3s
-        &:hover
-          &:after
-            width: 100%
-
-.menu-active 
-  .header-top__menu
-    &_text
-      transition: .3s all
-      transform: translateX(-110px)
-      font-size: 16px
-    &_icon  span
-      height: 0
-      &::before
-        transform: rotate(45deg)
-      &::after
-        transform: rotate(-45deg)
-      
-.active
-  transform: translateX(0)
-
-// /MENU
-
-// SECTION TITLE
-
-.section-title
-  text-align: center
-  padding-top: 110px
-  margin-bottom: 102px
-  font-size: 40px
-  position: relative
-  &::after
-    content: ''
-    position: absolute
-    bottom: -20px
-    left: 50%
-    transform: translateX(-50%)
-    width: 120px
-    height: 2px
-    background-color: $main-color
-
-// /SECTION TITLE
 
 // ABOUT
 
@@ -403,7 +308,7 @@ body
     &::after
       background-color: black
   &-text
-    color: black
+    color: white
     font-size: 25px
     line-height: 35px
     text-align: center
@@ -474,16 +379,18 @@ body
 .works
   padding-bottom: 110px
   &-top
-    background-color: $dark-color
     padding-bottom: 250px
+
+    background-color: $dark-color
   &-content
     margin-top: -250px
     &__inner
-      padding: 0px 10px
       display: flex
       align-items: center
       flex-direction: row
       flex-wrap: wrap
+
+      padding: 0px 10px
     &__item
       max-width: 50%
       overflow: hidden
@@ -514,8 +421,6 @@ body
         visibility: visible
       &_link
         position: relative
-        & img
-          transition: .5s all
         &::before
           content: '+'
           position: absolute
@@ -532,6 +437,8 @@ body
           background-color: rgba(black, 0.7)
           transition: .5s all
           z-index: 2
+        img
+          transition: .5s all
         &:hover::before
           display: flex
       &:hover
@@ -595,7 +502,7 @@ body
           box-shadow: 0 2px 43px 8px rgba($main-color, 0.31)
 
   // <!-- contact-info -->
-
+.contact
   &-info
     width: 40%
     padding: 0 50px
@@ -609,6 +516,8 @@ body
       margin-bottom: 20px
       &__icon
         max-width: 30px
+        object
+          fill: $main-color
       &__text
         font-size: 18px
         color: $main-color
@@ -627,16 +536,5 @@ body
         &:hover
           &:after
             width: 100%
-    
-// /Contact
-
-
-// classes
-
-.active
-  display: flex
-
-.show
-  display: block
-
+ 
 @import 'media'

@@ -1,6 +1,16 @@
 $(function() {
 
-  // Preloader
+  /* Main section */ 
+  /* vanta.js + three.js  */
+
+  VANTA.GLOBE({
+    el: "#globe",
+    size: 1,
+    color: 0x536de0,
+    backgroundColor: 0x090909
+  });
+
+  /* Preloader */
 
   loader();
 
@@ -18,7 +28,7 @@ $(function() {
   }
 
 
-  // ProgressBar
+  /* ProgressBar */
 
   $(window).on('scroll', () => progress() ); 
 
@@ -30,7 +40,9 @@ $(function() {
     $('.progress-bar').width(per + '%');
   }
 
-  // Menu
+
+
+  /* Menu */
 
   let menu = $('.menu'),
       menuOverlay = $('.menu-overlay'),
@@ -50,13 +62,15 @@ $(function() {
 
   menuOverlay.on('click', () => toggleMenu() );
 
-  // Slider
+  /* Slider */
 
   $('.skills-slider').slick({
     slidesToShow: 4,
     slidesToScroll: 1,
     autoplay: true,
     arrows: false,
+    pauseOnFocus: false,
+    pauseOnHover: false,
     autoplaySpeed: 1000,
     responsive: [
       {
@@ -80,7 +94,7 @@ $(function() {
     ]
   });
 
-  // Anchor 
+  /* Anchor */ 
 
   let $page = $('html, body');
   
@@ -109,6 +123,8 @@ $(function() {
       $('html').animate({scrollTop: 0}, 800);
     });
   }
+
+  /* Form */ 
 
   $('#submit').on('click', function() {
     let email = $('#email').val().trim(),
@@ -140,7 +156,6 @@ $(function() {
     });
         
   });
-
 
 });
 
